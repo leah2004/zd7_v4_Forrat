@@ -1,0 +1,64 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="forrat_tour_7.Page4">
+    <ContentPage>
+        <ContentPage.Resources>
+            <StyleSheet Source="Style.css" />
+        </ContentPage.Resources>
+        <StackLayout Padding="35">
+            <Label 
+                Text="ТУРЫ"
+                FontSize="25"
+                FontAttributes="Bold"
+                HorizontalOptions="Center"
+                VerticalOptions="End" />
+
+            <Entry 
+                x:Name="usernameEntry"
+                Placeholder="Username"
+                Keyboard="Text" />
+
+            <Entry 
+                x:Name="passwordEntry"
+                Placeholder="Password"
+                IsPassword="True" />
+        </StackLayout>
+    </ContentPage>
+    <ContentPage>
+        <ContentPage.Resources>
+            <StyleSheet Source="Style.css">
+            </StyleSheet>
+        </ContentPage.Resources>
+        <StackLayout>
+            <Label Text="Онлайн-турфирма (выбор и заказ туров)"
+                   FontAttributes="Italic"
+                   FontSize="24"
+                   TextColor="Blue" />
+
+           
+
+            <!-- CarouselView для выбора тура -->
+            <CarouselView x:Name="ToursCarouselView">
+                <CarouselView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{Binding Image}" Aspect="AspectFill"  HeightRequest="200" />
+                            <Label Text="{Binding Name}" FontSize="24" />
+                            <Label Text="{Binding Category}" />
+                            <Label Text="{Binding Country}" />
+                            <Label Text="{Binding Price}" />
+                            <Label Text="{Binding Operator}" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CarouselView.ItemTemplate>
+            </CarouselView>
+
+            <!-- Кнопки -->
+            <Button Text="Просмотр информации"
+                    Clicked="OnViewInfoClicked" />
+            <Button Text="Расчет стоимости"
+                    Clicked="OnCalculateCostClicked" />
+        </StackLayout>
+    </ContentPage>
+</CarouselPage>

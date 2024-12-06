@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="forrat_tour_7.MainPage">
+    <ContentPage.Resources>
+        <StyleSheet Source="Style.css" />
+    </ContentPage.Resources>
+
+    <StackLayout Padding="35">
+        <Label Text="Welcome"
+       FontSize="25"
+       FontAttributes="Bold"
+HorizontalOptions="Center"
+VerticalOptions="End" />
+
+        <Entry x:Name="usernameEntry"
+       Placeholder="Username"
+       Keyboard="Text" />
+
+        <Entry x:Name="passwordEntry"
+       Placeholder="Password"
+       IsPassword="True" />
+
+
+        <Button 
+       x:Name="loginButton"
+       Text="Sign In"
+       Clicked="Button_Clicked" 
+       TextTransform="None"/>
+
+        <StackLayout 
+       Orientation="Horizontal">
+            <CheckBox 
+            x:Name="rememberMeCheckBox"
+            HorizontalOptions="Start"
+            CheckedChanged="rememberMeCheckBox_CheckedChanged"
+            VerticalOptions="Center" />
+            <Label 
+           Text="Remember me"
+           VerticalOptions="Center" />
+
+            <Label
+           Padding="145, 0, 0, 0"
+           Text="I forgot!"
+           HorizontalOptions="Center"
+           VerticalOptions="End"/>
+
+
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>

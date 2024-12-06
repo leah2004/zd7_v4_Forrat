@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="forrat_tour_7.Page3">
+    <ContentPage.Resources>
+        <StyleSheet Source="Style.css" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Итоговая информация" FontSize="24" FontAttributes="Bold" />
+            <Label x:Name="CostLabel" Text="Стоимость: " />
+            <Label x:Name="DaysLabel" Text="Количество дней: " />
+            <Label x:Name="TravelersLabel" Text="Количество путешественников: " />
+            <Label x:Name="DiscountLabel" Text="Скидка: " />
+            <Label x:Name="FinalCostLabel" Text="Итоговая стоимость: " />
+            <!-- Кнопки -->
+            <Button Text="Назад на Page2"
+                    Clicked="OnBackToPage2Clicked" />
+            <Button Text="Назад на Page4"
+                    Clicked="OnBackToPage4Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

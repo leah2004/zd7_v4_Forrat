@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="forrat_tour_7.Page2">
+    <ContentPage.Resources>
+        <StyleSheet Source="Style.css" />
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <!-- Информация о туре -->
+            <Label Text="Информация о туре"  FontAttributes="Italic"
+ FontSize="24"
+ TextColor="Blue" />
+            <Label Text="{Binding Name}" FontSize="20" />
+            <Label Text="{Binding Category}" />
+            <Label Text="{Binding Country}" />
+            <Label Text="{Binding Price}" />
+            <Label Text="{Binding Operator}" />
+
+            <!-- Поля для ввода -->
+            <Entry x:Name="TravelersEntry" Placeholder="Количество путешественников" Keyboard="Numeric" />
+            <Entry x:Name="DaysEntry" Placeholder="Количество дней тура" Keyboard="Numeric" />
+
+            <!-- Лейбл для стоимости -->
+            <Label x:Name="CostLabel" Text="Стоимость: 0" FontSize="20" />
+
+            <!-- Кнопки -->
+            <Button Text="Рассчитать стоимость"
+                    Clicked="OnCalculateCostClicked" />
+            <Button Text="Назад"
+                    Clicked="OnBackToPage4Clicked" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="forrat_tour_7.Page1">
+    <ContentPage.Resources>
+        <StyleSheet Source="Style.css">
+        </StyleSheet>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Онлайн-турфирма (выбор и заказ туров)"
+                   FontAttributes="Italic"
+                   FontSize="24"
+                   TextColor="Blue" />
+
+            <CollectionView x:Name="ToursCollectionView">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Image Source="{Binding ImageUrl}" HeightRequest="200" />
+                            <Label Text="{Binding TourName}" FontSize="20" />
+                            <Label Text="{Binding Price}" TextColor="Green" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+
+            <Label Text="Данные по наличию туров со скидками на текущую дату:"
+                   TextColor="Red" />
+            <Label Text="{Binding CurrentDate}" TextColor="Red" />
+
+            <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                <Button Text="Просмотр информации по туру" Clicked="OnInfoTourClicked" />
+                <Button Text="Расчет стоимости тура" Clicked="OnCalculateCostClicked" />
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
